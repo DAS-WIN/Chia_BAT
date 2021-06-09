@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Chia耕地BAT生成器(Rui_Zhe)" Height="400" Width="800">
     <Grid>
         <Label Content="K大小" HorizontalAlignment="Left" Margin="60,35,0,0" VerticalAlignment="Top"/>
-        <Label Content="帳號指紋 Fingerprint" HorizontalAlignment="Left" Margin="60,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="帳號指紋 Fingerprint(選填)" HorizontalAlignment="Left" Margin="60,65,0,0" VerticalAlignment="Top"/>
         <Label Content="農夫公鑰 FPK" HorizontalAlignment="Left" Margin="60,95,0,0" VerticalAlignment="Top"/>
         <Label Content="礦池公鑰 PPK" HorizontalAlignment="Left" Margin="60,125,0,0" VerticalAlignment="Top"/>
         <Label Content="你要循環幾次" HorizontalAlignment="Left" Margin="60,155,0,0" VerticalAlignment="Top"/>
         <Label Content="最終資料夾路徑" HorizontalAlignment="Left" Margin="60,185,0,0" VerticalAlignment="Top"/>
         <Label Content="暫存資料夾路徑" HorizontalAlignment="Left" Margin="60,215,0,0" VerticalAlignment="Top"/>
-        <Label Content="暫存資料夾路徑(第二資料夾)" HorizontalAlignment="Left" Margin="60,245,0,0" VerticalAlignment="Top"/>
+        <Label Content="暫存資料夾路徑(第二資料夾)(選填)" HorizontalAlignment="Left" Margin="60,245,0,0" VerticalAlignment="Top"/>
         <Label Content="記憶體使用量(單位:MB)" HorizontalAlignment="Left" Margin="60,275,0,0" VerticalAlignment="Top"/>
         <Label Content="執行緒數量(最少使用 2)" HorizontalAlignment="Left" Margin="60,305,0,0" VerticalAlignment="Top"/>
         <Label Content="桶的使用數量(建議使用 128)" HorizontalAlignment="Left" Margin="60,335,0,0" VerticalAlignment="Top"/>
@@ -29,12 +29,9 @@
         <TextBox x:Name="Memory" HorizontalAlignment="Left" Margin="300,275,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Thread" HorizontalAlignment="Left" Margin="300,305,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Bucket" HorizontalAlignment="Left" Margin="300,335,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Outport_txt" HorizontalAlignment="Left" Margin="563,127,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="生成BAT" HorizontalAlignment="Left" Margin="515,196,0,0" VerticalAlignment="Top" Height="64" Width="135" FontSize="30" Click="Button_Click"/>
-        <Label Content="設定檔匯出位置" HorizontalAlignment="Left" Margin="466,123,0,0" VerticalAlignment="Top"/>
-        <Button Content="匯出設定" HorizontalAlignment="Left" Margin="700,125,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="匯入設定" HorizontalAlignment="Left" Margin="700,94,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
-        <TextBox x:Name="Import_txt" HorizontalAlignment="Left" Margin="563,95,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="設定檔匯入位置" HorizontalAlignment="Left" Margin="466,90,0,0" VerticalAlignment="Top"/>
+        <Button Content="生成BAT" HorizontalAlignment="Left" Margin="450,183,0,0" VerticalAlignment="Top" Height="125" Width="320" FontSize="72" Click="Bat_Builder"/>
+        <Button x:Name="Import_setting" Content="匯入設定" HorizontalAlignment="Left" Margin="450,78,0,0" VerticalAlignment="Top" Click="Import_setting_Click" Height="72" Width="155" FontSize="36"/>
+        <Button x:Name="Outport_setting" Content="匯出設定" HorizontalAlignment="Left" Margin="615,78,0,0" VerticalAlignment="Top" Click="Outport_setting_Click" Height="72" Width="155" FontSize="36"/>
+
     </Grid>
 </Window>
