@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace WpfApp2
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -18,7 +18,7 @@ namespace WpfApp2
         }
         private void Bat_Builder(object sender, RoutedEventArgs e)
         {
-            if (K_size.Text != "" && FPK.Text != "" && PPK.Text != "" && Loop_num.Text != "" && Final_Folder.Text != "" && Temp_Folder.Text != "" && Memory.Text != "" && Thread.Text != "" && Bucket.Text != "")
+            if (K_size.Text != "" && FPK.Text != "" && PoltNFTAddress.Text != "" && Loop_num.Text != "" && Final_Folder.Text != "" && Temp_Folder.Text != "" && Memory.Text != "" && Thread.Text != "" && Bucket.Text != "")
             {
                 DateTime dt = DateTime.Now;
                 String dt_str = dt.Year + "年" + dt.Month + "月" + dt.Day + "日" + dt.Hour + "點" + dt.Minute + "分" + dt.Second + "秒";
@@ -33,7 +33,7 @@ namespace WpfApp2
                         {
                             sw.Write("-a {0} ", Fingerprint.Text);
                         }
-                        sw.Write("-f {0} -p {1} -n {2} -d {3} -t {4} ", FPK.Text, PPK.Text, Loop_num.Text, Final_Folder.Text, Temp_Folder.Text);
+                        sw.Write("-f {0} -c {1} -n {2} -d {3} -t {4} ", FPK.Text, PoltNFTAddress.Text, Loop_num.Text, Final_Folder.Text, Temp_Folder.Text);
                         if (Temp_Folder_2.Text != "")
                         {
                             sw.Write("-2 {0} ", Temp_Folder_2.Text);
@@ -44,7 +44,7 @@ namespace WpfApp2
                         K_size.Text = "";
                         Fingerprint.Text = "";
                         FPK.Text = "";
-                        PPK.Text = "";
+                        PoltNFTAddress.Text = "";
                         Loop_num.Text = "";
                         Final_Folder.Text = "";
                         Temp_Folder.Text = "";
@@ -64,7 +64,7 @@ namespace WpfApp2
 
         String[] Parameter_Save()
         {
-            String[] Temp = new String[] { K_size.Text, Fingerprint.Text, FPK.Text, PPK.Text, Loop_num.Text, Final_Folder.Text, Temp_Folder.Text, Temp_Folder_2.Text, Memory.Text, Thread.Text, Bucket.Text };
+            String[] Temp = new String[] { K_size.Text, Fingerprint.Text, FPK.Text, PoltNFTAddress.Text, Loop_num.Text, Final_Folder.Text, Temp_Folder.Text, Temp_Folder_2.Text, Memory.Text, Thread.Text, Bucket.Text };
             return Temp;
         }
 
@@ -78,7 +78,7 @@ namespace WpfApp2
                 K_size.Text = sr.ReadLine();
                 Fingerprint.Text = sr.ReadLine();
                 FPK.Text = sr.ReadLine();
-                PPK.Text = sr.ReadLine();
+                PoltNFTAddress.Text = sr.ReadLine();
                 Loop_num.Text = sr.ReadLine();
                 Final_Folder.Text = sr.ReadLine();
                 Temp_Folder.Text = sr.ReadLine();
